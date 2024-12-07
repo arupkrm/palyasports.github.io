@@ -1,0 +1,148 @@
+<!-- Main Content -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from dev.playasport.in/admin/password/reset by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Dec 2024 10:18:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <title>Play a Sport | Admin Panel </title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="d9QPKsxpmLEmY8KLa5Li7ArF6bzvwyIsU8bObN9r">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/pages/login/login-4.min.css" />
+
+    <link href="../../assets/admin/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../assets/plugins/global/plugins.bundle.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/plugins/custom/prismjs/prismjs.bundle.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/style.bundle.css" />
+
+
+
+<link rel="stylesheet" type="text/css" href="../../assets/css/themes/layout/header/base/light.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/themes/layout/header/menu/light.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/themes/layout/brand/dark.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/themes/layout/aside/dark.css" />
+
+
+<link href="../../assets/admin/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../../../static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css" />
+<link rel="stylesheet" href="../../../static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css" />
+
+
+<link rel="stylesheet" type="text/css" href="../../assets/admin/css/custom.css" />
+            <link rel="stylesheet" type="text/css" href="../../assets/css/pages/login/login-3.css" />
+    
+    <link rel="icon" type="image/ico" sizes="64x64" href="../../assets/media/logos/favicon.ico"></head>
+<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+                <div class="d-flex flex-column flex-root">
+        <div class="login login-3 wizard d-flex flex-column flex-lg-row flex-column-fluid">
+            <div class="login-aside d-flex flex-column flex-row-auto">
+                <div class="aside-img d-flex flex-row-fluid bgi-no-repeat bgi-position-x-center"
+                    style="
+                background-position-y: calc(100% + 5rem);
+                background-image: url('../../frontend/images/svg_logo.svg');
+                background-position: center center;">
+                </div>
+            </div>
+
+            <div class="login-content flex-row-fluid d-flex flex-column p-10">
+                <div class="d-flex flex-row-fluid flex-center">
+                    <div class="login-form">
+                                                <form class="form" id="resetpwdform" role="form" method="POST"
+                            action="https://dev.playasport.in/admin/password/email">
+                            <input type="hidden" name="_token" value="d9QPKsxpmLEmY8KLa5Li7ArF6bzvwyIsU8bObN9r" autocomplete="off">                            <div class="pb-5 pb-lg-15">
+                                <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">
+                                    Forgot password
+                                </h3>
+                                <div class="text-muted font-weight-bold font-size-h4">
+                                    You will receive a password recovery link on your registered email Id
+                                </div>
+                            </div>
+                            <div class="form-group text-left"
+                                style="font-size: 13px;">
+                                <label class="font-size-h6 font-weight-bolder text-dark">Your Email</label>
+                                <input id="email" type="email"
+                                    class="form-control h-auto py-7 px-6 rounded-lg border-0" name="email"
+                                    value="" placeholder="Enter your Email Id" required>
+
+                                                            </div>
+                            <button type="submit"
+                                class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">
+                                Send Password Reset Link
+                            </button>
+                        </form>
+                        <div class="mt-10">
+                            <p class="text-center text-muted font-weight-bold font-size-h4">&copy;
+                                December, 2024 |
+                                Play a Sport. All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/frontend/js/app.js"></script>
+    <script src="../../assets/admin/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../../assets/admin/plugins/jquery-validation/js/additional-methods.js" type="text/javascript"></script>
+        <script src="../../assets/admin/js/custom_validations.js"></script>
+    <script>
+        $(document).ready(function() {
+            var statusMessage = $('.bg-success');
+
+            $("#resetpwdform").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        maxlength: 80,
+                        email: true,
+                        valid_email: true,
+                    },
+                },
+                messages: {
+                    email: {
+                        required: "The email address field is required.",
+                        maxlength: "The email address may not be greater than 80 characters.",
+                        email: "The email address must be a valid email address.",
+                        valid_email: "The email address must be a valid email address.",
+                    },
+                },
+                errorClass: 'invalid-feedback',
+                errorElement: 'span',
+                highlight: function(element) {
+                    $(element).addClass('is-invalid');
+                    $(element).siblings('label').addClass('text-danger'); // For Label
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass('is-invalid');
+                    $(element).siblings('label').removeClass('text-danger'); // For Label
+                },
+                errorPlacement: function(error, element) {
+                    // Clear the backend error message
+                    $('.has-error').removeClass('has-error');
+                    $('.help-block p.text-danger').empty();
+                    error.insertAfter(element);
+                },
+                submitHandler: function(form) {
+                    $("input[type=submit], input[type=button], button[type=submit]").prop("disabled",
+                        "disabled");
+                    form.submit();
+                }
+            });
+            if (statusMessage.length) {
+                setTimeout(function() {
+                    statusMessage.hide(); // To hide the element using jQuery
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+
+<!-- Mirrored from dev.playasport.in/admin/password/reset by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Dec 2024 10:18:47 GMT -->
+</html>
